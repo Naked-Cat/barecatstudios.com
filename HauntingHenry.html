@@ -4,8 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Haunting Henry — Bare Cat Studios</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Zupiter';
+            src: url('fonts/Zupiter.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
     <style>
         :root {
             --green:  #78D337;
@@ -66,7 +73,7 @@
         }
 
         .wordmark {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Zupiter', Georgia, serif;
             font-size: clamp(0.85rem, 2vw, 1.2rem);
             font-weight: 400;
             letter-spacing: 0.08em;
@@ -109,7 +116,7 @@
 
         /* ── TITLE ── */
         h1 {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Zupiter', Georgia, serif;
             font-size: clamp(2rem, 7vw, 3.8rem);
             font-weight: 700;
             line-height: 1.05;
@@ -240,7 +247,7 @@
 
         .btn-play {
             display: inline-block;
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Zupiter', Georgia, serif;
             font-size: 0.82rem;
             font-weight: 700;
             letter-spacing: 0.15em;
@@ -273,7 +280,7 @@
         }
 
         .footer-mark {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Zupiter', Georgia, serif;
             font-size: 0.75rem;
             color: var(--muted);
         }
@@ -288,6 +295,20 @@
         }
 
         footer a:hover { color: var(--green); }
+
+        .footer-credit {
+            font-size: 0.68rem;
+            color: var(--muted);
+            opacity: 0.55;
+        }
+
+        .footer-credit a {
+            color: var(--muted);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .footer-credit a:hover { color: var(--green); }
 
         /* ── ANIMATION ── */
         @keyframes fadeUp {
@@ -370,6 +391,7 @@
 
     <footer>
         <span class="footer-mark">Bare Cat Studios</span>
+        <span class="footer-credit">Display font: <a href="https://www.1001fonts.com/zupiter-font.html" target="_blank" rel="noopener">Zupiter</a> by Ray Larabie</span>
         <a href="index.html">← Studio Home</a>
     </footer>
 
