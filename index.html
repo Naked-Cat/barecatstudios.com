@@ -384,6 +384,55 @@
 
         .footer-credit a:hover { color: var(--green); }
 
+        /* ── GAMES SECTION ── */
+        .games {
+            position: relative;
+            z-index: 5;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+            text-align: center;
+        }
+
+        .game-card {
+            margin-top: 2rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(120,211,55,0.15);
+            border-radius: 3px;
+            background: rgba(120,211,55,0.03);
+        }
+
+        .game-meta {
+            margin-bottom: 0.8rem;
+        }
+
+        .game-tag {
+            font-size: 0.62rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--green);
+            opacity: 0.75;
+        }
+
+        .game-title {
+            font-family: 'Zupiter', Georgia, serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: normal;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .game-desc {
+            font-size: 0.92rem;
+            color: var(--text);
+            opacity: 0.75;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* ── ANIMATIONS ── */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(18px); }
@@ -405,10 +454,6 @@
 
     <header>
         <a class="wordmark" href="index.html">Bare Cat Studios</a>
-        <nav>
-            <a href="#about">About</a>
-            <a href="HauntingHenry.html" class="play-btn">Play Demo</a>
-        </nav>
     </header>
 
     <main>
@@ -416,7 +461,7 @@
             <div class="sign-frame">
                 <div class="sign-eyebrow">Welcome to</div>
                 <h1 class="sign-title">Nightshade<br><span class="glade">Glade</span></h1>
-                <div class="sign-sub">Population:&nbsp;&nbsp;something's&nbsp;not&nbsp;right&nbsp;here</div>
+                <div class="sign-sub">Population&nbsp;&nbsp;something's&nbsp;not&nbsp;right&nbsp;here</div>
             </div>
 
             <p class="hero-tagline">
@@ -424,7 +469,6 @@
             </p>
 
             <div class="hero-cta">
-                <a class="btn-primary" href="HauntingHenry.html">Play Haunting Henry</a>
                 <a class="btn-ghost" href="#about">Learn More</a>
             </div>
         </section>
@@ -450,6 +494,18 @@
                 Games are one of the most direct forms of storytelling ever created — an invitation to walk a mile in someone else's shoes. If someone is spending their limited and priceless time inside something we built, it had better be fun. And it had better mean something.
             </p>
             <p class="mission-sub">Respect &nbsp;·&nbsp; Play &nbsp;·&nbsp; Community</p>
+        </section>
+
+        <section class="games" id="games">
+            <div class="section-label">Our Games</div>
+            <div class="game-card">
+                <div class="game-meta">
+                    <span class="game-tag">Narrative Demo</span>
+                </div>
+                <h2 class="game-title">Haunting Henry</h2>
+                <p class="game-desc">A weekend alone with your stepdad. Three nights. Something is very wrong with Henry. A branching horror story with 64 endings — your first visit to Nightshade Glade.</p>
+                <a class="btn-primary" href="HauntingHenry.html">Play the Demo</a>
+            </div>
         </section>
     </main>
 
