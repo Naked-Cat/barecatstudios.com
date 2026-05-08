@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BareCat Studios</title>
+    <title>Bare Cat Studios</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         @font-face {
@@ -132,53 +132,24 @@
             pointer-events: none;
         }
 
-        .sign-frame {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 3.5rem;
+        /* ── HERO LOGO ── */
+        .hero-logo {
+            width: clamp(280px, 55vw, 620px);
+            margin-bottom: 1.5rem;
             animation: fadeUp 1s ease both;
+            filter:
+                drop-shadow(0 0 30px rgba(120,211,55,0.25))
+                drop-shadow(0 0 80px rgba(120,211,55,0.12));
         }
 
-        .sign-frame::before,
-        .sign-frame::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(120,211,55,0.4));
-        }
-
-        .sign-frame::before { right: calc(100% + 1.5rem); }
-        .sign-frame::after  { left: calc(100% + 1.5rem); transform: scaleX(-1); }
-
-        .sign-eyebrow {
-            font-family: 'Libre Baskerville', serif;
+        .hero-location {
             font-size: 0.72rem;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.35em;
             text-transform: uppercase;
             color: var(--green);
-            margin-bottom: 0.6rem;
             opacity: 0.8;
-        }
-
-        .sign-title {
-            font-family: 'Zupiter', Georgia, serif;
-            font-size: clamp(2.2rem, 7vw, 4.8rem);
-            font-weight: 700;
-            line-height: 1.05;
-            color: var(--text);
-            text-shadow:
-                0 0 60px rgba(120,211,55,0.18),
-                0 2px 4px rgba(0,0,0,0.8);
-            letter-spacing: 0.04em;
-        }
-
-        .sign-title .glade {
-            color: var(--green);
-            text-shadow:
-                0 0 40px rgba(120,211,55,0.6),
-                0 0 80px rgba(120,211,55,0.3);
+            margin-bottom: 0.5rem;
+            animation: fadeUp 1s 0.05s ease both;
         }
 
         .sign-sub {
@@ -187,10 +158,10 @@
             letter-spacing: 0.18em;
             text-transform: uppercase;
             color: var(--muted);
-            margin-top: 1rem;
+            margin-bottom: 2rem;
+            animation: fadeUp 1s 0.1s ease both;
         }
 
-        /* blinking cursor on sign */
         .sign-sub::after {
             content: '|';
             color: var(--red);
@@ -458,11 +429,13 @@
 
     <main>
         <section class="hero">
-            <div class="sign-frame">
-                <div class="sign-eyebrow">Welcome to</div>
-                <h1 class="sign-title">Nightshade<br><span class="glade">Glade</span></h1>
-                <div class="sign-sub">Population:&nbsp;&nbsp;something's&nbsp;not&nbsp;right&nbsp;here</div>
-            </div>
+            <div class="hero-location">Welcome to Nightshade Glade</div>
+            <img
+                class="hero-logo"
+                src="GreenEyeWhiteLogo.png"
+                alt="BareCat Studios — a sphynx cat prowling through the studio logo"
+            >
+            <div class="sign-sub">Population&nbsp;&nbsp;something's&nbsp;not&nbsp;right&nbsp;here</div>
 
             <p class="hero-tagline">
                 BareCat Studios invites players to visit Nightshade Glade — a town filled with friendly smiles, sprawling forests, and <em>centuries of dark secrets</em>. We make games for the kids who read scary stories by flashlight under their covers, and who always knew something was wrong with the adults.
@@ -476,23 +449,22 @@
         <section class="about" id="about">
             <div class="about-card">
                 <div class="label">The Town</div>
-                <p>Nightshade Glade is an interconnected universe of campfire stories that stand alone, but leave embers that carry forward.</p>
+                <p>Nightshade Glade is an interconnected universe of campfire horror games — each one a ghost story that stands alone, but leaves embers that carry forward.</p>
             </div>
             <div class="about-card">
                 <div class="label">The Studio</div>
-                <p> BareCat Studios believe that videogames are one of the most direct forms of storytelling, and invitation from a developer to the player to walk a mile in someone else's shoes. That responsibility means treating players with respect, care, and honesty. </p>
+                <p>Bare Cat Studios is a solo indie studio building pixel art horror games rooted in folklore, atmosphere, and the specific dread of knowing something the adults won't say.</p>
             </div>
             <div class="about-card">
                 <div class="label">The Promise</div>
-                <p>Every game we release is an invitation to care about what happens next. Nightshade Glade is built to reward patient players, with each title adding a new layer, each choice carrying forward, and the universe deepening with each story we tell.</p>
+                <p>Every game we release is an invitation to care about what happens next. The universe deepens with every story we tell — and it all leads somewhere.</p>
             </div>
         </section>
 
         <section class="mission">
             <div class="section-label">What we believe</div>
             <p class="mission-text">
-                Games are one of the most direct forms of storytelling ever created, an invitation to walk a mile in someone else's shoes. If someone is spending their limited and priceless time inside something we built, it had better be fun. Story and message matter, but fun comes first. BareCat Studios aims to build an identity so distinct that players recognize our work before they ever see our logo. Like the classic CD-ROM adventure games that inspired us, we want players to know the covenant before the game boots up. The tone, themes, and visual language will be familiar, while the gameplay is a surprise. Long term, we want to grow Nightshade Glade into a universe that supports multiple games and stories, and eventually a community of developers and players who call it "home".
-
+                Games are one of the most direct forms of storytelling ever created — an invitation to walk a mile in someone else's shoes. If someone is spending their limited and priceless time inside something we built, it had better be fun. And it had better mean something.
             </p>
             <p class="mission-sub">Respect &nbsp;·&nbsp; Play &nbsp;·&nbsp; Community</p>
         </section>
@@ -511,7 +483,7 @@
     </main>
 
     <footer>
-        <span class="footer-mark">© 2025 BareCat Studios</span>
+        <span class="footer-mark">© 2025 Bare Cat Studios</span>
         <div class="footer-links">
             <a href="HauntingHenry.html">Haunting Henry</a>
         </div>
