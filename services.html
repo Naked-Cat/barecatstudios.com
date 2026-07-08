@@ -383,6 +383,33 @@
 
         .footer-credit a:hover { color: var(--green); }
 
+        /* ── EMAIL COPY TOAST ── */
+        #email-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--mid);
+            color: var(--green);
+            border: 1px solid rgba(120,211,55,0.3);
+            padding: 0.85em 1.6em;
+            border-radius: 3px;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            z-index: 100;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        #email-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 700px) {
             header { flex-wrap: wrap; }
@@ -405,7 +432,7 @@
             <a href="index.html">Home</a>
             <a href="services.html" class="active">Services</a>
         </nav>
-        <a class="btn-contact" href="mailto:barecatstudios@gmail.com">Contact Us</a>
+        <a class="btn-contact" href="mailto:barecatstudios@gmail.com" onclick="copyEmail('barecatstudios@gmail.com')">Contact Us</a>
     </header>
 
     <main>
@@ -419,7 +446,7 @@
             </p>
 
             <div class="hero-cta">
-                <a class="btn-primary" href="mailto:barecatstudios@gmail.com?subject=Contract%20Inquiry">Get In Touch</a>
+                <a class="btn-primary" href="mailto:barecatstudios@gmail.com?subject=Contract%20Inquiry" onclick="copyEmail('barecatstudios@gmail.com')">Get In Touch</a>
                 <a class="btn-ghost" href="#services">See What I Offer</a>
             </div>
         </section>
@@ -457,7 +484,7 @@
             <div class="section-label">Let's Work Together</div>
             <div class="game-card">
                 <p>Not sure exactly what you need, or want to scope something custom? Tell me about the project and I'll get back to you with how I can help.</p>
-                <a class="btn-primary" href="mailto:barecatstudios@gmail.com?subject=Contract%20Inquiry">Contact Me</a>
+                <a class="btn-primary" href="mailto:barecatstudios@gmail.com?subject=Contract%20Inquiry" onclick="copyEmail('barecatstudios@gmail.com')">Contact Me</a>
             </div>
         </section>
     </main>
@@ -470,6 +497,26 @@
         </div>
         <span class="footer-credit">Display font: <a href="https://www.1001fonts.com/zupiter-font.html" target="_blank" rel="noopener">Zupiter</a> by Ray Larabie</span>
     </footer>
+    <div id="email-toast" role="status" aria-live="polite"></div>
+
+    <script>
+        function copyEmail(email) {
+            const showToast = () => {
+                const toast = document.getElementById('email-toast');
+                toast.textContent = 'Copied to clipboard: ' + email;
+                toast.classList.add('show');
+                clearTimeout(toast._hideTimer);
+                toast._hideTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(showToast).catch(showToast);
+            } else {
+                showToast();
+            }
+            // mailto: still fires normally via the link's href — this just
+            // guarantees the address is in hand even if no mail client opens.
+        }
+    </script>
 
 </body>
 </html>
